@@ -35,4 +35,34 @@ export const global = StyleSheet.create({
         shadowRadius: 10,
         elevation: 2
     },
+    inputGroup: {
+        marginBottom: height * 0.02,
+
+    },
+    label: {
+        fontSize: 16,
+        fontWeight: "600",
+        color: "#420350ff",
+        marginBottom: height * 0.01
+    },
+    inputIcon: {
+        backgroundColor: "#6e6e6eff",
+        paddingLeft: width * 0.02,
+        flexDirection: "row",
+        alignItems: "center",
+        borderWidth: 1,
+        borderColor: "#420350ff",
+        borderRadius: 10
+    },
+    inputError: {
+        backgroundColor: "#fed5d5ff",
+        borderColor: "#990000ff"
+    },
+    input: {
+        flex: 1,
+        fontSize: 17,
+        color: "#000",
+        fontWeight: "600",
+        paddingHorizontal: width * 0.02
+    },
 })

@@ -1,10 +1,22 @@
-import textField from "../ui/textField";
+import  AuthContainer from "../ui/authContainer";
+import  TextField  from "../ui/textField";
  
-export default function renderLogin() {
-    return(
-        <textField
-        label = "Email"
-        icon = "email">
-        </textField>
-    )
+
+const RenderLogin = () => {
+    return (
+       
+        <AuthContainer
+            title="Bem-vindo"
+            subtitle="Faça seu login!"
+            icon="hotel">
+            
+            {/*children*/}
+            <TextField
+                label="E-mail"
+                icon="email">
+            </TextField>
+        </AuthContainer>
+
+    );
 }
+export default RenderLogin;

@@ -1,13 +1,9 @@
-/* login */
+import RenderLogin from "@/components/login";
 
-import AuthContainer from "@/components/ui/authContainer";
-
-export default function Login() {
+const Login = () => {
     return (
-        <AuthContainer
-        title="Bem-vindo"
-        subtitle="Faça seu login!"
-        icon="hotel">
-        </AuthContainer>
+        <RenderLogin/>
     );
 }
+
+export default Login;

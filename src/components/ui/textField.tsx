@@ -1,27 +1,44 @@
-import { FontAwesome5 } from "@expo/vector-icons";
-import { TextInputProps } from "react-native";
-import {View, Text, TextInput} from "react-native";
-import React from "react";
 import { MaterialIcons } from "@expo/vector-icons";
-
+import React from "react";
+import { Text, TextInput, TextInputProps, View } from "react-native";
+import { global } from "./styles";
+ 
 type Props = TextInputProps & {
     label: string;
     errorText?: string;
-    icon?: keyof typeof FontAwesome5.glyphMap;
+    icon?: keyof typeof MaterialIcons.glyphMap;
 }
 
-export default function TextField( {label, errorText, icon} : Props) {
+const textField = ({label, errorText, icon, ...restInputProps} : Props) => {
     return(
-    <View>
-        <Text> {label}</Text>
-        <View>
-            {!! icon  && (
-                <View>
-                <MaterialIcons name={icon} size={18} color="yellow"/>
-                </View>
-            )}
-            <TextInput value="Isso é um teste"/>
+        <View style = {global.inputGroup}>
+            <Text style = {global.label}>{label}</Text>
+            <View style = {[global.inputIcon, errorText ? global.inputError : null]}>
+                {!! icon  && (
+                    <View>
+                        <MaterialIcons name={icon} size={18} color="yellow"/>
+                    </View>
+                )}
+                <TextInput 
+                    keyboardAppearance= "dark"
+                    placeholderTextColor= "#9ca3af"
+                    style = {[global.input]}
+                    /* const TextInputProps :
+                    { 
+                        style
+                        value
+                        placeholder
+                        autoComplete
+                        autoCapitalize
+                        keyboardtype
+                    } 
+                    */
+                    {...restInputProps}
+                />
+            </View>
+ 
         </View>
-    </View>
-    )
+    );
 }
+
+export default textField;
