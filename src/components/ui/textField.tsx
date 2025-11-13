@@ -9,19 +9,19 @@ type Props = TextInputProps & {
     icon?: keyof typeof MaterialIcons.glyphMap;
 }
 
-const textField = ({label, errorText, icon, ...restInputProps} : Props) => {
+const TextField = ({label, errorText, icon, ...props} : Props) => {
     return(
         <View style = {global.inputGroup}>
             <Text style = {global.label}>{label}</Text>
             <View style = {[global.inputIcon, errorText ? global.inputError : null]}>
                 {!! icon  && (
                     <View>
-                        <MaterialIcons name={icon} size={18} color="yellow"/>
+                        <MaterialIcons name={icon} size={18} color="black"/>
                     </View>
                 )}
                 <TextInput 
                     keyboardAppearance= "dark"
-                    placeholderTextColor= "#9ca3af"
+                    placeholderTextColor= "#8b8a8aff"
                     style = {[global.input]}
                     /* const TextInputProps :
                     { 
@@ -33,7 +33,7 @@ const textField = ({label, errorText, icon, ...restInputProps} : Props) => {
                         keyboardtype
                     } 
                     */
-                    {...restInputProps}
+                    {...props}
                 />
             </View>
  
@@ -41,4 +41,4 @@ const textField = ({label, errorText, icon, ...restInputProps} : Props) => {
     );
 }
 
-export default textField;
+export default TextField;
