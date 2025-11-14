@@ -4,7 +4,7 @@ const { width, height} = Dimensions.get("window");
 export const global = StyleSheet.create({
     safeArea: {
         flex: 1,
-        backgroundColor: "#fff",
+        backgroundColor: "#640909ff",
     },
     keyboardAvoiding: {
         flex: 1
@@ -18,36 +18,37 @@ export const global = StyleSheet.create({
         marginBottom: height * 0.03
     },
     title: {
+        color: "#ffffffff",
         fontSize: 25,
-        fontWeight: "800"
+        fontWeight: "600",
+        top: 44
+        
     },
     subtitle: {
-        fontSize: 17,
-        color: "black",
+        color: "#ffb731ff",
+        fontSize: 20,
         marginTop: height * 0.02,
-        fontWeight: "bold"
+        top: 45
     },
     content: {
-        backgroundColor: "#d8d8d8ff",
-        borderRadius: 10,
-        padding: width * 0.02,
-        shadowColor: "#000000ff",
-        shadowOpacity: 0.06,
-        shadowRadius: 10,
-        elevation: 2
+        borderRadius: 5,
+        padding: width * 0.06,
+        shadowColor: "#ffb731ff",
+        shadowOpacity: 0.02,
+        elevation: 5,
+        top: 35
     },
     inputGroup: {
         marginBottom: height * 0.02,
 
     },
-    label: {
-        fontSize: 14,
-        fontWeight: "600",
-        color: "#990000ff",
+    placeholder: {
+        fontSize: 12,
+        fontWeight: "400",
         marginBottom: height * 0.01
     },
     inputIcon: {
-        backgroundColor: "#f5f0f0ff",
+        backgroundColor: "#e6e3dfff",
         paddingLeft: width * 0.02,
         flexDirection: "row",
         alignItems: "center",
@@ -57,12 +58,12 @@ export const global = StyleSheet.create({
     },
     eyeIcon: {
         position: "absolute",
-        right: 12,
-        top: 42
+        right: 17,
+        top: 34
     },
     inputError: {
         backgroundColor: "#fed5d5ff",
-        borderColor: "#ff0000ff"
+        borderColor: "#ffffffff"
     },
     input: {
         flex: 1,
@@ -78,7 +79,7 @@ export const global = StyleSheet.create({
         marginTop: height * 0.01
     },
     primaryButton: {
-        backgroundColor: "#640909ff",
+        backgroundColor: "#b88425ff",
         borderRadius: 10,
         padding: width * 0.025,
         alignItems: "center"

@@ -1,6 +1,6 @@
 import { FontAwesome5 } from "@expo/vector-icons";
-import React from "react";
-import { KeyboardAvoidingView, Platform, ScrollView, Text, View } from "react-native";
+import React, { useState } from "react";
+import { Animated, KeyboardAvoidingView, Platform, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { global } from "./styles";
 
@@ -9,20 +9,31 @@ type Props = {
    subtitle?: string;
    icon?: keyof typeof FontAwesome5.glyphMap;
    children: React.ReactNode;
+//    logo?: Image;
 }
-const AuthContainer = ({ title, subtitle, icon, children }: Props) => {
+
+
+const AuthContainer = ({ title, subtitle, /*logo,*/ icon, children }: Props) => {
+    const [offset] = useState(new Animated.ValueXY({ x: 0, y: 80 }));
+    const [opacity] = useState(new Animated.Value(0));
+    const [logo] = useState(new Animated.ValueXY({ x: 170, y: 195 }));
+                    
+
   return (
         <SafeAreaView style={global.safeArea}>
             <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"} style={global.keyboardAvoiding}>
             <ScrollView contentContainerStyle={global.container}>
 
                 <View style={global.header}>
-                {!!icon && <FontAwesome5 name={icon} size={25} color="#990000ff" />}
+                <Animated.Image style={{width: logo.x, height: logo.y}}source={require('../image/hotel-logo.png')}/>
+                {/* {!!icon && <FontAwesome5 name={icon} size={29} top={12} color="#b88425ff" />} */}
+              
+                
                 <Text style={global.title}>{title}</Text>
                 {!!subtitle && <Text style={global.subtitle}>{subtitle}</Text>}
+                
                 </View>
             
-
                 <View style={global.content}>
                     {children}
                 </View>
