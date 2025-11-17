@@ -16,7 +16,7 @@ type Props = {
 const AuthContainer = ({ title, subtitle, /*logo,*/ icon, children }: Props) => {
     const [offset] = useState(new Animated.ValueXY({ x: 0, y: 80 }));
     const [opacity] = useState(new Animated.Value(0));
-    const [logo] = useState(new Animated.ValueXY({ x: 170, y: 195 }));
+    const [logo] = useState(new Animated.ValueXY({ x: 175, y: 120 }));
                     
 
   return (
