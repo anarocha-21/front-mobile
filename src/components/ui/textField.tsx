@@ -3,18 +3,16 @@ import React from "react";
 import { Text, TextInput, TextInputProps, View } from "react-native";
 import { global } from "./styles";
  
-type IconLibrary = TextInputProps & {
-    placeholder: string;
-    label? : string;
+type Props = TextInputProps & {
+    label : string;
     errorText?: string;
-    lib?: IconLibrary;
     icon?: keyof typeof MaterialIcons.glyphMap;
 }
 
-const TextField = ({ errorText, icon, ...props} : IconLibrary) => {
+const TextField = ({ label, errorText, icon, ...props} : Props) => {
     return(
         <View style = {global.inputGroup}>
-            <Text style = {global.placeholder}>{}</Text>
+            <Text style = {[global.placeholder, global.label]}>{label}</Text>
             <View style = {[global.inputIcon, errorText ? global.inputError : null]}>
                 {!! icon  && (
                     <View>
