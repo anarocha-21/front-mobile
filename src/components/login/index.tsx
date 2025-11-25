@@ -20,36 +20,37 @@ const RenderLogin = () => {
             icon="hotel">
             
             {/*children*/}
-            <TextField
-                label=""
-                icon="email"
-                placeholder="E-mail"
-                keyboardType="email-address"
-            ></TextField>
+            <View style={global.content}>
 
-            <PasswordField
-                label=""
-                icon="lock"
-                placeholder="••••••••••"
-            ></PasswordField>
+                <TextField
+                    label=""
+                    icon="email"
+                    placeholder="E-mail"
+                    keyboardType="email-address"
+                ></TextField>
 
-            <TouchableOpacity style={[global.primaryButton]}>
-                <Text style={global.primaryButtonText}>Entrar</Text>
-            </TouchableOpacity>
+                <PasswordField
+                    label=""
+                    icon="lock"
+                    placeholder="••••••••••"
+                ></PasswordField>
 
-            <View style={{alignItems: "center"}}>
+                <TouchableOpacity style={[global.primaryButton]} onPress={() => router.push("/(tabs)/explorer")}>
+                    <Text style={global.primaryButtonText}>Entrar</Text>
+                </TouchableOpacity>
 
-            <TouchableOpacity onPress={() => router.push("/(auth)/resetPassword")}>
-                <Text style={{color: "#ffff", fontWeight: 600, fontSize: 14,  marginTop: height * 0.04 }}>Esqueceu sua senha? Clique aqui</Text>
-            </TouchableOpacity>
+                <View style={{alignItems: "center"}}>
 
-            <TouchableOpacity onPress={() => router.push("/(auth)/register")}>
-                <Text style={{color: "#ffff", fontWeight: 600, fontSize: 14, marginTop: height * 0.02}}>Cadastre-se aqui</Text>
-            </TouchableOpacity> 
+                    <TouchableOpacity onPress={() => router.push("/(auth)/resetPassword")}>
+                        <Text style={{color: "#ffff", fontWeight: 600, fontSize: 14,  marginTop: height * 0.04 }}>Esqueceu sua senha? Clique aqui</Text>
+                    </TouchableOpacity>
 
+                    <TouchableOpacity onPress={() => router.push("/(auth)/register")}>
+                        <Text style={{color: "#ffff", fontWeight: 600, fontSize: 14, marginTop: height * 0.02}}>Cadastre-se aqui</Text>
+                    </TouchableOpacity> 
+
+                </View>
             </View>
-            
-            
         </AuthContainer>
 
     );

@@ -5,9 +5,6 @@ import { TouchableOpacity, Text, Dimensions, View} from "react-native";
 import { global } from "../ui/styles";
 import { useRouter } from "expo-router";
 
-
-
-
 const RenderRegister = () => {
 
     const router = useRouter()

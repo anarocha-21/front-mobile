@@ -10,7 +10,6 @@ const RenderPassword = () => {
     const router = useRouter();
     const {height} = Dimensions.get("window");
 
-    
     return (
         <AuthContainer
         title = "Redefinição de senha"

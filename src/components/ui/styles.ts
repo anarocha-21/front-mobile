@@ -65,7 +65,7 @@ export const global = StyleSheet.create({
     eyeIcon: {
         position: "absolute",
         right: 17,
-        top: 34
+        top: 40
     },
     inputError: {
         backgroundColor: "#fed5d5ff",
