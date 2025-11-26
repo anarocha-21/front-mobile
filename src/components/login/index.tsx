@@ -24,14 +24,14 @@ const RenderLogin = () => {
 
                 <TextField
                     label=""
-                    icon="email"
+                    icon= {{lib: "MaterialIcons", name:"email" }}
                     placeholder="E-mail"
                     keyboardType="email-address"
                 ></TextField>
 
                 <PasswordField
                     label=""
-                    icon="lock"
+                    icon= {{lib: "MaterialIcons", name:"lock" }}
                     placeholder="••••••••••"
                 ></PasswordField>
 

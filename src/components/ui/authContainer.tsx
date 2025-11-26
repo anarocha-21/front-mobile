@@ -1,4 +1,4 @@
-import { FontAwesome5, Ionicons } from "@expo/vector-icons";
+import { FontAwesome5 } from "@expo/vector-icons";
 import React, { useState } from "react";
 import { Animated, KeyboardAvoidingView, Platform, ScrollView, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
@@ -8,13 +8,11 @@ type Props = {
    title?: string;
    subtitle?: string;
    icon?: keyof typeof FontAwesome5.glyphMap;
-   iconReturn?: keyof typeof FontAwesome5.glyphMap; //chevron-left
    children: React.ReactNode;
 //    logo?: Image;
 }
 
-
-const AuthContainer = ({ title, subtitle, /*logo,*/ iconReturn, icon, children }: Props) => {
+const AuthContainer = ({ title, subtitle, /*logo,*/ icon, children }: Props) => {
 const [logo] = useState(new Animated.ValueXY({ x: 175, y: 120 }));     
 
   return (

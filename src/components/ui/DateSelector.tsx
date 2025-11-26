@@ -1,38 +1,41 @@
-import DatePicker, { getFormatedDate, getToday } from 'react-native-modern-datepicker';
+import DatePicker, { getToday} from 'react-native-modern-datepicker';
 import { useState} from "react";
-import { View, Text } from "react-native";
+import { View, Dimensions } from "react-native";
+
 
 type Props = {
-    label?: string;
-}
+    onSelectDate: (date: string) => void;
+};
 
-const DateSelector = ({label}: Props) => {
-    const today = new Date();
-    const tomorrow = new Date(today);
-    tomorrow.setDate(today.getDate() +1);
-    const startDate = getFormatedDate(tomorrow, "YYYY/MM/DD h:m")
 
+const DateSelector = ({onSelectDate} : Props) => {
+    const {width, height} = Dimensions.get("window");
+    const today = getToday();
     const [selectDate, setSelectedDate] = useState ("");
+
     return (
         <View>
-            {!!label && 
-            <Text>{label}</Text>}
             <DatePicker
                 mode="calendar"
                 options={{
                     backgroundColor: "#ebe6e6ff",
                     textHeaderColor: "#800909ff",
                     textDefaultColor: "#000000ff",
-                    selectedTextColor: "#000000ff",
-                    mainColor: "#8a000044",
+                    selectedTextColor: "#ffffffff",
+                    mainColor: "#8a000093",
                     textSecondaryColor: "#420000ff",
-                    borderColor: "rgba(110, 108, 108, 0.25)"
+                    borderColor: "rgba(110, 108, 108, 0.25)",
+                    textFontSize: 13,
+                    textHeaderFontSize: 14
                 }}
-                style={{borderRadius:15}}
+                style={{borderRadius:15, width: width * 0.60, height: "auto"}}
                 isGregorian={true}
-                minimumDate={startDate}
+                minimumDate={today}
                 selected={selectDate}
-                onSelectedChange={date=>setSelectedDate(date)}
+                onSelectedChange={(date)=> { 
+                    setSelectedDate(date);
+                    onSelectDate(date)
+                }}
             />
         </View>
     );
