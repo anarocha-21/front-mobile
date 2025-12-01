@@ -1,8 +1,8 @@
-import {View, Dimensions, TouchableOpacity, TextComponent} from "react-native";
+import { useState } from "react";
+import { Dimensions, TouchableOpacity, View } from "react-native";
 import AuthContainer from "../ui/AuthContainer";
 import DateSelector from "../ui/DateSelector";
 import TextField from "../ui/TextField";
-import { useState } from "react";
 
 
 const RenderExplorer = () =>  {
@@ -29,7 +29,7 @@ const RenderExplorer = () =>  {
                             <TextField
                                 label="Check-in"
                                 icon={{ lib: "FontAwesome5", name: "calendar-alt" }}
-                                placeholder="selecione uma data"
+                                placeholder="Ida"
                                 value= {checkIn}
                             />
                         </View>
@@ -50,7 +50,7 @@ const RenderExplorer = () =>  {
                             <TextField
                                 label="Check-out"
                                 icon={{ lib: "FontAwesome5", name: "calendar-alt" }}
-                                placeholder="selecione uma data"
+                                placeholder="Volta"
                                 value={checkOut}
                             />
                         </View>

@@ -2,11 +2,9 @@ import DatePicker, { getToday} from 'react-native-modern-datepicker';
 import { useState} from "react";
 import { View, Dimensions } from "react-native";
 
-
 type Props = {
     onSelectDate: (date: string) => void;
 };
-
 
 const DateSelector = ({onSelectDate} : Props) => {
     const {width, height} = Dimensions.get("window");

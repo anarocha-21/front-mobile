@@ -4,9 +4,9 @@ import { Text, TextInput, TextInputProps, View } from "react-native";
 import { global } from "./styles";
  
 type NameIcon = 
-    | {lib: "MaterialIcons"; name: keyof typeof MaterialIcons.glyphMap }
-    | {lib: "FontAwesome5"; name: keyof typeof FontAwesome5.glyphMap }
-    | {lib: "FontAwesome6"; name: keyof typeof FontAwesome6.glyphMap };
+| {lib: "MaterialIcons"; name: keyof typeof MaterialIcons.glyphMap }
+| {lib: "FontAwesome5"; name: keyof typeof FontAwesome5.glyphMap }
+| {lib: "FontAwesome6"; name: keyof typeof FontAwesome6.glyphMap };
 
 type Props = TextInputProps & {
     label : string;
